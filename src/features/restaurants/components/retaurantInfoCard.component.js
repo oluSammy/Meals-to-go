@@ -33,6 +33,8 @@ const RestaurantInfoCard = ({ restaurant = {} }) => {
 
   const ratingArray = Array.from(new Array(Math.floor(rating)));
 
+  // console.log(photos, "---")
+
   return (
     <>
       <RestaurantCard>
