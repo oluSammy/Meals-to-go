@@ -1,10 +1,11 @@
 import React from "react";
 // import { Text, StyleSheet } from "react-native";
-import { Card } from "react-native-paper";
+// import { Card } from "react-native-paper";
 import { View, Image } from "react-native";
 import { SvgXml } from "react-native-svg";
 import star from "../../../../assets/star";
 import open from "../../../../assets/open";
+// import Favourites from "../../../components/Favourites/Favourites.component";
 
 import { Text } from "../../../components/Typography/Text.component";
 import {
@@ -39,6 +40,7 @@ const RestaurantInfoCard = ({ restaurant = {} }) => {
     <>
       <RestaurantCard>
         <CardCover source={{ uri: photos[0] }} />
+        {/* <Favourites restaurant={restaurant} /> */}
         <Info>
           <Text variant="label">{name}</Text>
           <IconBox>

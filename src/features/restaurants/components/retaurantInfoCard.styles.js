@@ -18,6 +18,7 @@ export const Address = styled.Text`
 
 export const RestaurantCard = styled(Card)`
   margin-bottom: ${(props) => props.theme.sizes[2]};
+  position: relative;
 `;
 
 export const CardCover = styled(Card.Cover)`

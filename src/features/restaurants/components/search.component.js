@@ -9,7 +9,7 @@ const StyledSearchContainer = styled(View)`
   padding: ${(props) => props.theme.sizes[1]};
 `;
 
-const Search = () => {
+const Search = ({ isFavoriteToggled, onFavouritesToggle }) => {
   const { keyword, search } = useContext(LocationContext);
   const [searchKeyword, setSearchKeyword] = useState(keyword);
 
@@ -20,6 +20,8 @@ const Search = () => {
   return (
     <StyledSearchContainer>
       <Searchbar
+        icon={isFavoriteToggled ? "heart" : "heart-outline"}
+        onIconPress={onFavouritesToggle}
         placeholder="search for a location"
         value={searchKeyword}
         onSubmitEditing={() => {
