@@ -26,12 +26,7 @@ const RestaurantDetailScreen = ({ route }) => {
             expanded={breakfastExpanded}
             onPress={() => setBreakfastExpanded(!breakfastExpanded)}
           >
-            <List.Item
-              title="Eggs Benedict"
-              onPress={() => {
-                console.log("Hello");
-              }}
-            />
+            <List.Item title="Eggs Benedict" onPress={() => {}} />
             <List.Item title="Classic Breakfast" />
           </List.Accordion>
           <List.Accordion

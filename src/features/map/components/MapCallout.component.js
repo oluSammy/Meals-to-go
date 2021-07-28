@@ -5,7 +5,7 @@ import CompactRestaurantInfo from "../../restaurants/CompactRestaurantInfo/Compa
 const MyText = styled.Text``;
 
 const MapCallout = ({ restaurant }) => {
-  return <CompactRestaurantInfo restaurant={restaurant} />;
+  return <CompactRestaurantInfo restaurant={restaurant} isMap />;
 };
 
 // <CompactRestaurantInfo restaurant={restaurant} />

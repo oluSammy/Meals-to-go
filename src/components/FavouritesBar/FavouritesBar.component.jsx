@@ -14,7 +14,7 @@ const FaveWrapper = styled.View`
 `;
 
 const FavouritesBar = ({ favourites, onNavigate, navigation }) => {
-  if (!favourites.length) return null
+  if (!favourites.length) return null;
   return (
     <FavouritesWrapper>
       <Text variant="caption">Favourites</Text>
