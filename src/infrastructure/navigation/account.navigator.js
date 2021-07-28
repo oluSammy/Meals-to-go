@@ -1,6 +1,5 @@
 import React from "react";
 import { createStackNavigator } from "@react-navigation/stack";
-import { Text, View } from "react-native";
 import { NavigationContainer } from "@react-navigation/native";
 import AccountScreen from "../../features/account/Screens/account.screen";
 import LoginScreen from "../../features/account/Screens/login.screen";

@@ -5,7 +5,7 @@ import { TextInput } from "react-native-paper";
 import { Text } from "react-native";
 
 export const AccountBackground = styled.ImageBackground.attrs({
-  source: require("../../../assets/imageBg.jpg"),
+  source: require("../../../../assets/imageBg.jpg"),
 })`
   flex: 1;
   align-items: center;
@@ -41,4 +41,12 @@ export const Title = styled(Text)`
   text-align: center;
   font-size: 25px;
   font-weight: 600;
+`;
+
+export const AnimationWrapper = styled.View`
+  width: 100%;
+  height: 40%;
+  position: absolute;
+  top: 3px;
+  padding: ${(props) => props.theme.space[2]};
 `;

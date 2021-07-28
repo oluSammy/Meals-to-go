@@ -16,7 +16,7 @@ const RestaurantDetailScreen = ({ route }) => {
 
   return (
     <View style={{ position: "relative" }}>
-      <StyledSafeArea>
+      <>
         <RestaurantInfoCard restaurant={restaurant.restaurant} />
         <Favourites restaurant={restaurant} />
         <ScrollView>
@@ -59,7 +59,7 @@ const RestaurantDetailScreen = ({ route }) => {
             <List.Item title="Coffee" />
           </List.Accordion>
         </ScrollView>
-      </StyledSafeArea>
+      </>
     </View>
   );
 };

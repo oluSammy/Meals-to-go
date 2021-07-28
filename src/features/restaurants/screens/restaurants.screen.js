@@ -8,6 +8,7 @@ import { FavoritesContext } from "../../../services/favourites/favourites.contex
 import { ActivityIndicator, Colors } from "react-native-paper";
 import Search from "../components/search.component";
 import FavouritesBar from "../../../components/FavouritesBar/FavouritesBar.component";
+import FadeInView from "../../../components/animations/fade.animation";
 
 const StyledLoader = styled(View)`
   margin-top: 50%;
@@ -15,8 +16,7 @@ const StyledLoader = styled(View)`
 
 const RestaurantScreen = ({ navigation }) => {
   const { restaurants, isLoading } = useContext(RestaurantContext);
-  const { favorites, addFavorites, removeFavorites } =
-    useContext(FavoritesContext);
+  const { favorites } = useContext(FavoritesContext);
   const [isToggled, setIsToggled] = useState(false);
   return (
     <StyledSafeArea>
@@ -44,7 +44,9 @@ const RestaurantScreen = ({ navigation }) => {
                 navigation.navigate("RestaurantsDetail", { restaurant: item })
               }
             >
-              <RestaurantInfoCard restaurant={item} />
+              <FadeInView>
+                <RestaurantInfoCard restaurant={item} />
+              </FadeInView>
             </TouchableOpacity>
           )}
           keyExtractor={(item) => item.name}
