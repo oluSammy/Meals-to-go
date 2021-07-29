@@ -1,10 +1,13 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../../../services/authentication/authentication.context";
 import { StyledSafeArea } from "../../../components/Safe-Area/SafeArea";
+import { TouchableOpacity } from "react-native";
 import { List, Avatar } from "react-native-paper";
+import { useFocusEffect } from "@react-navigation/native";
 import styled from "styled-components/native";
 import { Spacer } from "../../../components/Spacer/Spacer.component";
 import { Text } from "react-native";
+import AsyncStorage from "@react-native-async-storage/async-storage";
 
 const SettingsItem = styled(List.Item)`
   padding: ${(props) => props.theme.space[3]};
@@ -17,15 +20,35 @@ const AvatarContainer = styled.View`
 
 const SettingsScreen = ({ navigation }) => {
   const { onLogout, user } = useContext(AuthContext);
+  const [photo, setPhoto] = useState(null);
+
+  const getProfilePicture = async (usr) => {
+    const photoUri = await AsyncStorage.getItem(`${usr.uid}-photo`);
+    setPhoto(photoUri);
+  };
+
+  useFocusEffect(() => {
+    getProfilePicture(user);
+  }, [user]);
 
   return (
     <StyledSafeArea>
-      <AvatarContainer>
-        <Avatar.Icon size={50} icon="human" backgroundColor="#2182BD" />
-        <Spacer position="top" size="large">
-          <Text variant="label">{user.email}</Text>
-        </Spacer>
-      </AvatarContainer>
+      <TouchableOpacity onPress={() => navigation.navigate("camera")}>
+        <AvatarContainer>
+          {!photo ? (
+            <Avatar.Icon size={50} icon="human" backgroundColor="#2182BD" />
+          ) : (
+            <Avatar.Image
+              size={50}
+              source={{ uri: photo }}
+              backgroundColor="#2182BD"
+            />
+          )}
+          <Spacer position="top" size="large">
+            <Text variant="label">{user.email}</Text>
+          </Spacer>
+        </AvatarContainer>
+      </TouchableOpacity>
       <List.Section>
         <SettingsItem
           title="Favourites"

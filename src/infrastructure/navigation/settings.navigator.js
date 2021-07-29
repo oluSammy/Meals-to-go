@@ -6,6 +6,7 @@ import {
 // import { Settings } from "react-native";
 import SettingsScreen from "../../features/settings/screens/settings.screens";
 import Faves from "../../features/settings/screens/Faves.screen";
+import Camera from "../../features/settings/screens/camera.screen";
 
 const SettingsStack = createStackNavigator();
 
@@ -23,6 +24,7 @@ export const SettingsNavigator = ({ route, navigation }) => {
         component={SettingsScreen}
       />
       <SettingsStack.Screen name="Favourites" component={Faves} />
+      <SettingsStack.Screen name="camera" component={Camera} />
     </SettingsStack.Navigator>
   );
 };
