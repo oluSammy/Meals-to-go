@@ -33,3 +33,11 @@ export const restaurantsRequest = (location = "37.7749295,-122.4194155") => {
     resolve(mock);
   });
 };
+
+// export const restaurantsRequest = (location) => {
+//   return fetch(
+//     `http://localhost:5001/mealstogo-6e4fb/us-central1/placesNearBy?location=${location}`
+//   ).then((res) => {
+//     return res.json();
+//   });
+// };
